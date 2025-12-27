@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chore Swap</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Two-kid chore rotation</p>
+        <h1>Keep chores moving without keeping score</h1>
+        <p class="lede">
+          Mark a chore as done and it will automatically swap to the other child when it's due next.
+          Daily chores rotate every day; longer chores rotate every 3 days (or whatever frequency you set in code).
+        </p>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <p class="eyebrow">Live queue</p>
+            <h2>Chores and who owns them</h2>
+          </div>
+          <button id="refresh" class="ghost">Refresh</button>
+        </div>
+        <div id="banner" class="banner" role="status" aria-live="polite"></div>
+        <div id="chore-list" class="chore-list"></div>
+      </section>
+
+      <section class="card card--muted">
+        <h3>How notifications work</h3>
+        <ul>
+          <li>Every minute the server checks for chores that are due or overdue.</li>
+          <li>If an email address or phone number is set for the assigned kid, the server will send an alert.</li>
+          <li>Configuration is handled with environment variables—see the README for SMTP and Twilio examples.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
